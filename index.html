@@ -146,8 +146,6 @@
   .hero .cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
   .portrait{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:1;margin:0}
   .portrait img{width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:0 0 0 8px rgba(255,255,255,.06),0 0 0 26px rgba(255,255,255,.04),0 30px 60px rgba(0,0,0,.35);position:relative;z-index:1}
-  .portrait::before{content:"";position:absolute;inset:-26px;border-radius:50%;border:1px dashed rgba(201,242,77,.4);animation:spin 90s linear infinite reverse}
-  .portrait::after{content:"";position:absolute;inset:-26px;border-radius:50%;background:radial-gradient(circle at 50% 0px,var(--lime) 4px,rgba(201,242,77,.35) 5px,transparent 8px);animation:spin 28s linear infinite;pointer-events:none}
   @keyframes spin{to{transform:rotate(360deg)}}
   .portrait figcaption{text-align:center;margin-top:1.4rem}
   .portrait figcaption b{display:block;font-size:1.25rem}
@@ -166,7 +164,7 @@
   .hero .cta{animation:rise .8s var(--ease) .6s both}
   .hero .portrait{animation:rise 1s var(--ease) .25s both}
   @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.portrait{order:-1;width:min(220px,60vw)}.portrait figcaption{display:none}.portrait::before{inset:-16px}.portrait::after{display:none}}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.portrait{order:-1;width:min(220px,60vw)}.portrait figcaption{display:none}}
 
   /* trust strip */
   .strip{background:var(--forest-deep);color:var(--ink-soft);padding:0;font-size:.95rem;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
@@ -361,6 +359,14 @@
   .band.paper .service .aside{background:var(--forest)}
   .band.dark .service .aside{background:var(--forest-deep)}
   .why .ectrack{margin-top:2.75rem}
+  .svc-more{margin-top:.2rem}
+  .svc-more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.65rem;font-weight:600;font-size:.95rem;color:var(--lime);padding:.55rem 1.1rem;border:1px solid rgba(201,242,77,.35);border-radius:999px;transition:background .2s,border-color .2s;user-select:none}
+  .svc-more summary::-webkit-details-marker{display:none}
+  .svc-more summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .3s var(--ease)}
+  .svc-more[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+  .svc-more summary:hover{background:rgba(201,242,77,.10);border-color:var(--lime)}
+  .svc-body{animation:svcIn .45s var(--ease)}
+  @keyframes svcIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -370,8 +376,8 @@
     <a class="brand" href="#top"><i></i>GROW &amp; PROSPER</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#for">Who this is for</a></li>
-      <li><a href="#proof">Proof</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#proof">Proof</a></li>
     </ul>
     <a class="btn btn-primary js-book" href="#book">Book a free consultation</a>
     <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
@@ -432,9 +438,9 @@
       <h3>Who I work with</h3>
       <dl>
         <div><dt>Size</dt><dd>2-50 M€ revenue, owner-led</dd></div>
-        <div><dt>Sector</dt><dd>B2C e-commerce, retail, services with a digital sales channel</dd></div>
+        <div><dt>Sector</dt><dd>B2C, B2B, B2B2C<br>e-commerce, retail, services with omnichannel sales</dd></div>
         <div><dt>Markets</dt><dd>CEE &amp; DACH</dd></div>
-        <div><dt>Buyer</dt><dd>The owner or founder-CEO, still active in the business</dd></div>
+        <div><dt>Buyer</dt><dd>Owner or founder-CEO</dd></div>
       </dl>
       <hr>
       <h3>Who I don't</h3>
@@ -446,10 +452,103 @@
   </div>
 </section>
 
-<section id="proof" class="band dark">
+<section id="services" class="band dark">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2>Three ways to work with a strategist.</h2>
+    <p class="lead">Start with the strategy. Then decide whether I build it, lead it, or hand it to your team.</p>
+
+    <div class="steps">
+<article class="service" id="diagnostic">
+      <div>
+        <div class="step">Step 1: Strategy</div>
+        <h3>Growth Strategy &amp; 12-Month Roadmap</h3>
+        <p class="for">For owner-led companies that grew fast and stalled - revenue up, profit flat, no clear next move.</p>
+        <details class="svc-more"><summary>What I do &amp; what you get</summary><div class="svc-body">
+        <h4>What I actually do</h4>
+        <ul class="do">
+          <li>I audit your P&amp;L, funnel and market position - numbers first, opinions second.</li>
+          <li>I interview your team and your customers, and pull the real data from your systems.</li>
+          <li>I rank every growth lever by impact and feasibility - and tell you which to ignore.</li>
+        </ul>
+        <h4>What you get in hand</h4>
+        <ul class="get">
+          <li>A written growth strategy: where the profit is, what is blocking it, and what it costs you</li>
+          <li>A prioritized 12-month roadmap on one page</li>
+          <li>A working session with you to decide what happens next</li>
+        </ul>
+        </div></details>
+      </div>
+      <div class="aside">
+        <h4>Timeframe &amp; price</h4>
+        <p class="price">14 days<small>Fixed price, confirmed on the first call.</small></p>
+        <a class="btn btn-primary js-book" href="#book">Start with the strategy</a>
+      </div>
+    </article>
+
+    <article class="service" id="engine">
+      <div>
+        <div class="step">Step 2: Build</div>
+        <h3>Go-to-Market &amp; Demand Engine Build</h3>
+        <p class="for">For companies with a strategy and a proven product - but no system executing it. Demand stops the day the budget stops.</p>
+        <details class="svc-more"><summary>What I do &amp; what you get</summary><div class="svc-body">
+        <h4>What I actually do</h4>
+        <ul class="do">
+          <li>I design and build the demand system end to end - targeting, channels, content, CRM, lead scoring.</li>
+          <li>I run it with your team for the first period, tuning against real cost-per-lead numbers.</li>
+          <li>I hand it over documented, measured and working - your team runs it without me.</li>
+        </ul>
+        <h4>What you get in hand</h4>
+        <ul class="get">
+          <li>A live lead-gen engine across your channels</li>
+          <li>CRM configured with lead scoring and pipeline stages</li>
+          <li>Dashboards showing cost per lead and pipeline value - working dashboards, not screenshots</li>
+          <li>Playbooks your team can run without me</li>
+        </ul>
+        </div></details>
+      </div>
+      <div class="aside">
+        <h4>Timeframe &amp; price</h4>
+        <p class="price">Scoped after the strategy<small>Duration and fixed price depend on channels and markets.</small></p>
+        <a class="btn btn-primary js-book" href="#book">Discuss the engine</a>
+      </div>
+    </article>
+
+    <article class="service" id="fractional">
+      <div>
+        <div class="step">Step 3: Lead</div>
+        <h3>Fractional CMO / Growth Orchestrator</h3>
+        <p class="for">For companies that need a senior strategist in the leadership team - but not a full-time hire, and not an agency retainer.</p>
+        <details class="svc-more"><summary>What I do &amp; what you get</summary><div class="svc-body">
+        <h4>What I actually do</h4>
+        <ul class="do">
+          <li>I take ownership of your marketing P&amp;L at 20-40% of a full-time seat.</li>
+          <li>I lead your team, your agencies and your budget - decisions included, not just advice.</li>
+          <li>I report to you in revenue and margin, not in impressions and activity.</li>
+        </ul>
+        <h4>What you get in hand</h4>
+        <ul class="get">
+          <li>A senior operator in your leadership meetings</li>
+          <li>A quarterly growth plan and budget you approve</li>
+          <li>A monthly performance report in P&amp;L terms</li>
+          <li>No overhead, no long commitment - stop any quarter</li>
+        </ul>
+        </div></details>
+      </div>
+      <div class="aside">
+        <h4>Timeframe &amp; price</h4>
+        <p class="price">20-40% of a full-time seat<small>Monthly retainer, stop any quarter. Interim or full-time seat also possible - ask on the call.</small></p>
+        <a class="btn btn-primary js-book" href="#book">Talk about the seat</a>
+      </div>
+    </article>
+</div>
+  </div>
+</section>
+
+<section id="proof" class="band paper">
   <div class="wrap">
     <span class="eyebrow">Proof</span>
-    <h2>Two companies. One method.</h2>
+    <h2>9x profit. 2x revenue. My last two clients.</h2>
     <p class="lead">Different industries, different price points. Strategy first, then a system that executes it whether anyone is in the office or not.</p>
 
     <article class="case">
@@ -483,93 +582,10 @@
 
 
     <div class="proof-close"><b>Neither of these was a campaign. Both started as a strategy and ended as a system.</b> A campaign stops when the budget stops. A strategy with a system behind it keeps producing after you stop paying attention.</div>
-  </div>
-</section>
-
-<section id="services" class="band paper">
-  <div class="wrap">
-    <span class="eyebrow">Services</span>
-    <h2>Three ways to work with a strategist.</h2>
-    <p class="lead">Start with the strategy. Then decide whether I build it, lead it, or hand it to your team.</p>
-
-    <div class="steps">
-<article class="service" id="diagnostic">
-      <div>
-        <div class="step">Step 1: Strategy</div>
-        <h3>Growth Strategy &amp; 12-Month Roadmap</h3>
-        <p class="for">For owner-led companies that grew fast and stalled - revenue up, profit flat, no clear next move.</p>
-        <h4>What I actually do</h4>
-        <ul class="do">
-          <li>I audit your P&amp;L, funnel and market position - numbers first, opinions second.</li>
-          <li>I interview your team and your customers, and pull the real data from your systems.</li>
-          <li>I rank every growth lever by impact and feasibility - and tell you which to ignore.</li>
-        </ul>
-        <h4>What you get in hand</h4>
-        <ul class="get">
-          <li>A written growth strategy: where the profit is, what is blocking it, and what it costs you</li>
-          <li>A prioritized 12-month roadmap on one page</li>
-          <li>A working session with you to decide what happens next</li>
-        </ul>
-      </div>
-      <div class="aside">
-        <h4>Timeframe &amp; price</h4>
-        <p class="price">14 days<small>Fixed price, confirmed on the first call.</small></p>
-        <a class="btn btn-primary js-book" href="#book">Start with the strategy</a>
-      </div>
-    </article>
-
-    <article class="service" id="engine">
-      <div>
-        <div class="step">Step 2: Build</div>
-        <h3>Go-to-Market &amp; Demand Engine Build</h3>
-        <p class="for">For companies with a strategy and a proven product - but no system executing it. Demand stops the day the budget stops.</p>
-        <h4>What I actually do</h4>
-        <ul class="do">
-          <li>I design and build the demand system end to end - targeting, channels, content, CRM, lead scoring.</li>
-          <li>I run it with your team for the first period, tuning against real cost-per-lead numbers.</li>
-          <li>I hand it over documented, measured and working - your team runs it without me.</li>
-        </ul>
-        <h4>What you get in hand</h4>
-        <ul class="get">
-          <li>A live lead-gen engine across your channels</li>
-          <li>CRM configured with lead scoring and pipeline stages</li>
-          <li>Dashboards showing cost per lead and pipeline value - working dashboards, not screenshots</li>
-          <li>Playbooks your team can run without me</li>
-        </ul>
-      </div>
-      <div class="aside">
-        <h4>Timeframe &amp; price</h4>
-        <p class="price">Scoped after the strategy<small>Duration and fixed price depend on channels and markets.</small></p>
-        <a class="btn btn-primary js-book" href="#book">Discuss the engine</a>
-      </div>
-    </article>
-
-    <article class="service" id="fractional">
-      <div>
-        <div class="step">Step 3: Lead</div>
-        <h3>Fractional CMO / Growth Orchestrator</h3>
-        <p class="for">For companies that need a senior strategist in the leadership team - but not a full-time hire, and not an agency retainer.</p>
-        <h4>What I actually do</h4>
-        <ul class="do">
-          <li>I take ownership of your marketing P&amp;L at 20-40% of a full-time seat.</li>
-          <li>I lead your team, your agencies and your budget - decisions included, not just advice.</li>
-          <li>I report to you in revenue and margin, not in impressions and activity.</li>
-        </ul>
-        <h4>What you get in hand</h4>
-        <ul class="get">
-          <li>A senior operator in your leadership meetings</li>
-          <li>A quarterly growth plan and budget you approve</li>
-          <li>A monthly performance report in P&amp;L terms</li>
-          <li>No overhead, no long commitment - stop any quarter</li>
-        </ul>
-      </div>
-      <div class="aside">
-        <h4>Timeframe &amp; price</h4>
-        <p class="price">20-40% of a full-time seat<small>Monthly retainer, stop any quarter. Interim or full-time seat also possible - ask on the call.</small></p>
-        <a class="btn btn-primary js-book" href="#book">Talk about the seat</a>
-      </div>
-    </article>
-</div>
+    <div class="brands">
+      <p>Brands I have grown, as a director or as strategy lead</p>
+      <div class="marquee"><div class="marquee-track"><ul><li>Heineken</li><li>Coca-Cola</li><li>P&amp;G</li><li>Tesco</li><li>VW</li><li>Audi</li><li>Subway</li><li>Bayer</li><li>E.ON</li><li>Alza</li><li>UniCredit</li><li>Yoplait</li><li>Google</li><li>Sony</li><li>H&amp;M</li></ul><ul aria-hidden="true"><li>Heineken</li><li>Coca-Cola</li><li>P&amp;G</li><li>Tesco</li><li>VW</li><li>Audi</li><li>Subway</li><li>Bayer</li><li>E.ON</li><li>Alza</li><li>UniCredit</li><li>Yoplait</li><li>Google</li><li>Sony</li><li>H&amp;M</li></ul></div></div>
+    </div>
   </div>
 </section>
 
@@ -590,12 +606,8 @@
       <div><b>Straight answers.</b><p>If your product, your price or your market is the real problem, you'll hear it on the first call, not in month four.</p></div>
     </div>
     <div class="ectrack">
-      <h3>E-commerce track record</h3>
-      <div class="ec-grid"><div><b>SkyEurope</b><span>Pioneering e-commerce in CEE, 7 markets. Passengers +45.7%, most profitable half-year.</span></div><div><b>Tesco</b><span>Helped drive Tesco Online sales +40% in 12 months.</span></div><div><b>Alza</b><span>Lead media strategist behind Alza's growth to Nr. 1, over 5 years.</span></div><div><b>Volkswagen</b><span>Digital and content strategy. #2 market share in year 2, right after Skoda.</span></div><div><b>E.ON</b><span>Launched E.ON e-mobility. #1 market share in year 1.</span></div><div><b>WPP</b><span>Strategic planning, content and digital. +50% growth in 3 years, WPP High Performer.</span></div><div><b>Dexfinity</b><span>E-commerce accelerator. Head of Strategy: demand generation and marketing automation.</span></div></div>
-    </div>
-    <div class="brands">
-      <p>Brands I have grown, as a director or as strategy lead</p>
-      <div class="marquee"><div class="marquee-track"><ul><li>Heineken</li><li>Coca-Cola</li><li>P&amp;G</li><li>Tesco</li><li>VW</li><li>Audi</li><li>Subway</li><li>Bayer</li><li>E.ON</li><li>Alza</li><li>UniCredit</li><li>Yoplait</li><li>Google</li><li>Sony</li><li>H&amp;M</li></ul><ul aria-hidden="true"><li>Heineken</li><li>Coca-Cola</li><li>P&amp;G</li><li>Tesco</li><li>VW</li><li>Audi</li><li>Subway</li><li>Bayer</li><li>E.ON</li><li>Alza</li><li>UniCredit</li><li>Yoplait</li><li>Google</li><li>Sony</li><li>H&amp;M</li></ul></div></div>
+      <h3>Track record</h3>
+      <div class="ec-grid"><div><b>Subway</b><span>Transformed 13 CEE markets. KPI growth indexes over +10% vs. EMEA and Global. Best practice for other business units: France, UK, South Europe.</span></div><div><b>Yoplait</b><span>From decline to company turnaround. Relaunched Yoplait: yoghurt 200% vs. target, fresh cream market share 21% to 29%.</span></div><div><b>WPP Media</b><span>Agency growth in 3 years +50%, from #6 to #3. WPP High Performer.</span></div><div><b>Tesco</b><span>Helped drive Tesco Online sales +40% in 12 months.</span></div><div><b>Alza</b><span>Lead media strategist behind Alza's growth to Nr. 1, over 5 years.</span></div><div><b>Volkswagen</b><span>Digital and content strategy. #2 market share in year 2, right after Skoda.</span></div><div><b>E.ON</b><span>Launched E.ON e-mobility. #1 market share in year 1.</span></div><div><b>Dexfinity</b><span>E-commerce accelerator. Head of Strategy: demand generation and marketing automation.</span></div></div>
     </div>
   </div>
 </section>
@@ -608,10 +620,6 @@
       <blockquote><img src="data:image/webp;base64,UklGRh4aAABXRUJQVlA4WAoAAAAQAAAAnwAAnwAAQUxQSIUGAAAB8Ebbtmnbtq3lWkpdtm3btm3btm3btm3btm0bE2GEUUsteWPOuXprvdb+b4UQEROAf0cOQTT+v6pq/H+V0CsE0ajosEaV2klUDHHsmZbeeM+jzrj0uptuuvaS04/YfcMlZxgTQ1SVakkMAGSaNY+89c1fMv9x+um1mw5ddUoAkCgVCjEAmHLTS9/p4xCzpWG2zCEOfv2C9ScDEGKoiyqA2Q58ahBJWrLszn/sni1lkvz7kT1nAKBSDw3AJLs+YyQtZWejnpOR7Ht02/EB0ToogEWv+J1kMmcr3RLJn86fFwhaPg0Iaz1G0szZYjcj870rAkHKJgKs+yLp5my9J5KPrwxoKFdQYNmnyWzsTrdMPrAwoKUSYPobScvsYsv0SyZDkCJFxAP+YjZ2uTl/3gnQ8ohg3udJYwGNfHgmSCiMAvv30ZxFdONfOwJalIhJ7iWNxTTy+rEQyxEUS33F5CyoG9+bB7EUQbBjPxMLmzhgI2goggScQs8srpEHQUIBBMNdy+QssBvPQZCuE4xyHxPL7InXapAuE4z6GBOLnXhrDKGrJIzyOBML3s9bVUIXBRnufiYWPfEaaOiaEHEdEwvfz7MQuybiFCYWP3F/xC6J2IGJ5ffEdRC7QrF4Mq8Acx4wG7QLJEz4LTOraHxvNAmtCxEP0FjJxGsQW6fYj4nVTNwC2jLFnH3m9fD851RBWhV0uFdorKjxAWirFPszsarGLaAtkjD1gOx1yfnH8UTao7iFxsoaz4W2RrEkjbX13D9b0LaIPF8hGu9GWxRr0Vjh7ItC2yH6qlfJ+BCkFYrVmFnl7AtB2yB4ilanxFshLVAs6Jl1du+bHtKGK5kqxcSTEBsLmPBPeq0yvx0VoamIXWmstnE9xKYCnqua3wlpSDBzcq+X8++JIc1EHMDEihu3Qmwm4BlazZLfDmlEMMVges2cP4+J0ETEpjRWPXN5aBOKS5nqlng8YhPQd5jrZnwSoQHB1H30ujl/HRuhc4o1mFl558LQzkUcwVS7xJ0QO6e4lVa/85tAeJO5dsbHEDoWMNYv9NplfjIcQqcEM1n9nH9N1DnF0sysn88O6VTExrTqMXNZaOf2ZKqfcSPEzh3VCyTu0sQZvcGhTVzaG5zeOcV1vcElTdzUG1zZy13XG1zUuYhLeoNTmzi9NzikiSN6g52b2L0XMG4A7dyGtPplLtM5xZL06jl9VkinBDMkev3+nAChUwFj/lS/zI9i54DwGnPtjA9B0HHFjbTaJZ6N2LmIQ5jqt20TilWYa+dcANo5weSD6XVz/jQGQucAeYO5bsZHIGgw4gKmuiUeidjMerS6OZeCNiGYeAC9Zs7vR0NoAoLHaDVLfgMUjUbsyVQz40aIzQim7aPXy/n7eAjNQPC4W72S3whFwxHbsGKZqzUXMM6v9Fplfj4SQlNQXMBUq8QjEdGCOc0r5T5oCkhzEDxAq1PiVVC0ULEMc52yzdkOSHiGViPj7RC0UrE8c42yzQ1tBwSP0upjvB6Klirmy+a18Tx42iBtgeJyWm0ST4CitRIm+i17XbJ/ObqE9kCxA1NdEteCosVBw+O0mhhvgqLVgukGZK9H9h8nFGkXFNsz1SNxTSjaHnEjUy0Sz0FE64OM8SGtDsYXh9fQPijmHJhzDTJ/ngqCboxYn8nL52bLQNGdEQczFc8Tt0NEt0acw/7SJR6BiK4NiuuYypZ4FmLoHgTR29hfssSLoQHdHMJwtzIVyxMvhgR0twS9hsnL5MazIAHdLgFnMXuJsvMISED3B8H+pJXHaNtDA0oYFOv9xVSaxB+XQ0QpI+Z4m+YlyZnPT4uIckaMfiVp5UjkWSNAUVIFtvqN5mXImd+uAwjKGhTT3kMm7z5P5PWTQAOKq8BW35LWbUZ+sh6gKLEIJjinn27dZOTA48eEBBRagblvJ928O9zIfM1MgKLcQYEl7yWZcvtyIvPNCwAaUHQRYLGb+kgzb5NbJgdcMR+gguKrADOd+CVJM29HNiP58RHTACKoogow+vq3/0kyJ/Nm3JKT/PWG1UcCVFBNUQCTbnnbjyTpKVl2/yfu2ZI5SX57/UYTAIiCqgYVAGMtd9wTP3PI2dIwWuaQf3jkiCVHB6AaUF+JCgDjLLzjeY998hf/qf/x0UNnbTv/mACgGlDroDHg/4efaPblNtrlsNMvvvLKi089ZKcNlp51goj/l6gBlQ8ao6CjEqMG9IohiMZhVZUQ8C/JAFZQOCByEwAAcFAAnQEqoACgAD5hKpFGJCKhoSvSLBCADAlAGpgTqlGT5Z/9rv25trZXpG8Ufpueav9pvVu9Pv+A9KDqlfQr6Wf+2+c5qqHkn+RfhR4I/4r8eP259XfFV79/cvQPxz9jeqJ8w/Cf8nzg79fkdqKe0d7zho9h3rC8S3/T9OftF5tP++9ev995Qfl/sGfm3/o+qp/0f6T0f/TX/a9wv+Y/1f/gf4H2nfYj+2HsF/ri3Ocuqjli9Hi3AoGpvh+Hb4eOAXOk+iKazS7Jtjn/466ZX1b9wrdEyxscvbd3eAru+OFCpyjeUPWp2KgR6I1toreA7d617Hy/uvfRGYbqAZ/XKhriJ5zk3KbOulilb8OP6kUEkR+xSKZ+h2SuiXzB4AfkurxUcd+9jKH97pyF0L0Z2SJh81I51ETnJqN/ssJWYYf6+c2d4HsarS31irn5KquQee9ZW7DzzSpBtr4TJb0icyexiBxCz6V1CBqgAk7zUTXyi9mtCap/I0FchI2EJ1SJFXbfAeAuci5fxqYJ/b8sdtSS2B3p6Zw2P5FEEvvfCdqe3qDQqksJiRoDSfK4zt1GTzeS0rkNwJEZ3xqvEjnUw+aMgYMEWI4aMdYo5ldBlkQN88oAjsYm3EAdnDR3cGGtojt8U2Eh9pfZc6rEbE8h2lNQp2tRy6cqbbBo5l/C23HO7QqpdZEbLxkgxT9aBtqRANw84RecpEj5FX/1PDVfRtZdOeucrgZXrsRurRyL6dSrCbKJGIuwRnh+sFTyTkdOZdBxiCqvHBVThsHmNBFRnkCy9FnIAqb8cOi8LHuN21Y75HyMDTwNO6m0ApcgfdvbiI0MxuFqSbH0MT0ogul4xTwaBOKyjG2KpdGWAAD+/nyVc/8k72ywlgFUqhQWaWeQV2nXD9W7a4fcVVsB4Xh3lA2khMEylCeB0JMYv946yMTR5aX8iZ283G4JMEA8ptv3Cwhf1NjV2n8nNdVtTCdLe2KnE8/zVfHUHlOqaQkABaXfIRXu7YopQetNHG4dEHGUtZOs3FNwwq53q24Q2KblEMobaeoM2KMfQn+/uIpv+ScS3+Cik8M1Srsc+rRuzMt2nAwnLfPkXBtJWK9UXFgCMlXisbkQ7EQUYpPhBH7/aYjcM6lDhKPPRWuEw5yFO9J29XumpI3+lA7nU3Y3S6FsLepdUP8uVng73cer/tIO3q9+eeD3J3Xt7n0PeTdp7m9Xs/clZ/xQbLftz7EQVmwL7mVXeZCC8nx5K/b2ZRf2Qm7c9V/mHJ86L9saMUyahK+LTu8e/5lKsV9XdJjkofGELKM0TP5msd5jrphuqT5vfVi6I47/yMnZLBpFQDQztHwEJZD15ag1F837ALweO1uk1YboKPuYw7ajlmVpBeAIifq8++g6mACWvgDb8p5PXhRK9TCTf4Aze32zJHfHhrwoUaUJ+yyJ3rkzvE1r9RmJR4aD+Tsc0+ckn8c975y/KR6gWDgI7ISGLVIiiizL9loZ1bFWNajOucZxGBsJxWqdsMRkWO8RoqSvBNDcrDpXOWjSm178k4gfT8rH4Iq61sbqtoYLeMjd8cu/OlL3VHwl+LhPsKV93Sr+Rkbw/Gf9fodYPyAfBNQinCo92SL8CKnKFo3ShGUKd1CReXTfWFvkOi7RZc8Xt5RHAbOoz2bWHqrnfHIbzd9ZTy10Jg2115euUOb+IOHQMRB66y87O2VS4DLlndrCWoK6avWFMZEinUZXU3UZL0923rpjnz7sObY4V9pHtC7U8h+ahLUoNH8956Q05QZ5eMYXY2z+Jj4h0atvLZfOBj3OZjtAELnFv/3P/zDQZhw2UvD5dbi1O8uTxHB+MyFTYF3Sfvx1y+5+RIxnm6nkff+HXQjAH+DhyhzG6Q62OPOQWqQDSRiPYaxNpJ5Z4+XFhAJtYLMoH3hmdnmJi0W5/3FXvFv+tKZvwt+xqghYBewPDKcu9rbE0lV+5WYrjXFNFnfUMgU8ycQzt3O2wXHKZ5uxtle5UGkDS7kR/CX7T1YlakbU9O8o9v21FBimJC+iHmkRbR8yGRHzDup42wXAPRP3hSBeNfzNcoAjPOCkMT857bDsEZ+n+/5lJwQEYDd4N/+LnwZAIrNnsynZcC3TaaRBefCtSWrOIpd0daTHL6Gh/9sy+9iPSO2E5zQ56ZgZ3Vb/j/lkOEyCLEFVR6vwA1td6/1TXSEOp338oqlJ235o8tpiyTy0j1Qi9Wfp6GgtMSKGrag96uVy091/Ty4s955yBgKpovjcEFnrLhNvfnW1etp3HX19slNlZ8Z34tynAn8tYEzvypZxXtLhFnkvu1KZrV074/udWoIPtrmEoU5HPRd5r1llc3UCzcRrYPVK6Sscfzom075vNZFHqrfVLLxYnWZ56XI6L27J6CRu60K/m3OSSh/xI3HFLMEPtTpEOA3yu3xeOcLINCFbjCkXS/VAkUSftdztoARO8GOZDdBrVGeJX/5JyIcqqNzmebix/tS8nwKrEckIxh/BoFBqlNz9fJHkf7W3xYlGRrlYMDhFKfTyNMmatgHurwKyRSbW9kZcnZuu+8+/cwJlD2GQKazqa4mMYeXIg2iVBQnxpIorLU5n28DaIdQ34YL0r/xGKohBQCalxa3BXtYBImXe9rEnSCOvJQyYmm2wdvWZOr8MISIsjPnuRACA1jhrGkbSiR/voy1K4Ij4hGb66hp+BJI5mdp2TX8P+m914JNseOK0Zq7QkHSVJk6g3uIL59pGLJFEg2GJj+NnxLznQ8FKdJ16Lw+TYRS/YTPAwZy5eHe6fre+RfjOocMCV3gDMuomOIw+9OmHVtmQgp2Ukno9iXWA4EoikLhcfdR/hdpEvDTACWSCfm+rWeoKR1Xd2he1/eLa1mZOMMKxCH28wjOB5s9yTUIinaiGc4pU5c5M8HiwyXPnxBz3/HNezyXvoJzTqirQaeGCchcR9ghDy8OPqDceuBawNLZgmjpeZlY+61SGCFvulNRBJpPZFkH64zLLk0FVUiP9C5mL9ypu9k8RE4Wp3PM52lJH6Vs5yfHMOtxgrAVjf6G/Z6hhpxqAKxUM/gilZ6RBxlJj8GhvISmZSOymrvRttkEvkyV8ig7QKe6utKQ9Q/1ssSS5gbc7vROvi44VXe4By4o79AhpJNFJ5tv4W1fdI77ikNpcyqesSZ4GpdDUuCxaH/TdKW4Oc+kKIDnxZAlFPQ8P4a4PC6erx9xH+Z0OkfO2O1n0Q9AgQJdaQ7b9bcf3qKm+v+g6gxQ3xhLLHXkqBtSnwZPdIAunKroAu3+EOJx45a4+OwNT5dNSK0v6wZM2UJvxEdMlp/xesD6uzj+CPnSd5+NUUCbrWdTfna5BXzzLS0eczGvj+m1QNbh6IXUNas+o8CLJWtfahi9mRuKo66cDr95xEsUXJHMLHMee69fuLsPVAureNSxUuotJD55+B2bkCTVF3aMXk9nOWzT6aFcukYBJU1r5c0ePkzH/qkcDaSp/Y1FePUd0BRqi0IJVJujXiEna3AYLzOLsMpWJgz76EQDdnj8KV+D/n12iFIcQgRdRTV9PQXzlBDt7y1bx+enxr8DirqylARWD0Egh4bAY0YQQfu+eqknYI7B6zVNAiUp32aGtQ70wIDqjVoYTp8Kusn7gdziKhnygP5tR3UL/hAe3ysUXGvumzMeb+OP72jnWCzEj8tOtL56o9gwxlti9RAd4o9mPhzD/r7oIdhmQ8nIUpWOqFOx5dMtXv9EvbEwDOpYptASk+zN+UWxeth1bfFasQm0xn6cUtLlCS10IAfOdQXFjzj8icqYy4sLP+dPfH2KMbhXpaddKNOCipyrXm2El8/ib8i225GXTF3Z9a3ZLQkWxgO0aPvNcCFqt1JGpnt14RdpAYM70OgSnJ+pMGkg0OAyMtcZRBOcazoFHdoTpt25lQevGiWTjecfpz8P11YNHW1WmRCqCauu9A/k1cT+XcVziIcqG2+4Yse2I8WON98CXLDzEnQVV4UekrP3brnabFUmt4oCQ1KDfv0gYOlGzJA1s8hl0cAaLamGMxYNouMkSuRlYysy59zrQZT78dZquuE5Lb0eFPQlNLeVsu74zJCsSVf69XbB68Rgn2rMdteITTPi6AaFU0nHmJZjoFw58w+0OG2fP3veQNGBv6gTJNJGR/JPNQESA47AaGPfch6q1RW8yGNTIpi3IpeReb6gnwjhUtIsYRseaAW4K4oouPHJFb5iv5Ld0ypfhdYSsucmOyCuRHTUJhIm/dPTXHiLVk7VezsB3CGvGfzevPOQZVbXzAn4zlIFmqsuvPXIMbyML+66v87rDnTM2EJ0kNDJubvXrPig9jPLUmKN9QZUL6kvWRPe+YoXGGA6K47+5w0Md5Mw3FkK5SpjPkZ7hknv7pA3VJclx0WSuT98Rq06PRGCZQ6R5KICnXXfJ/1013+HdHaJvyx25svAj1uhK7odqqkDllCSodi2qz+T3VIkICKAdVg1vtA1mSvFZTdXE5qngZcKU7Hpsoq/ojO+1eTHXh+sulVFoxqPXotYc3l0sM/8yAxXBjGvNOCX8q1wk9GGSGMCQvYOO1CSKfOi683J6OjNxNkPwxRUHuco3qk6MjpqJUuq07io0atWfhLhEv3dC3MesE1pDaHMIDXU0uRSeeDHdDjQ+H7hUkdn9z6uo/miVvsOgXlSCostjZl57PZ8d0M/wpxIZvgx+afx3cC1WPH6mjU9z6gN4vWws85ZWA/nAgo3yYBT/DtPL0bL6jl7Hx0eq2aBUsUwc5ae38WATOAUxmmHFh+50LMuz3bJF5pYlh+OdaW+NasL5TSdocjqny35kQIT+HUmr27AcAJIMM7ubhza0m1vlqUHgmrzJK4BZFRv5PdlRWJq1kOf4LTD0ngBdhWG7mGd5mCtbW0wJgTD74+jH/jwtkg8jX8yaVvfHKTMMpuzkRZUydqj2ml5Y5UzcVNO2aVuerHVAH+eP7iCCFDVhLp58EUjMcNMnZcZuCFrLvpL0EHnCqJLdBRa3/2o+V6T90vVslbBZqt2seXt9jSBeaBoMlx7j3w7J7K87RD/eIeaqVCyZ8+oeyxNCzPcKggyHJOcaNPtRrrLcFa8qrWVn/qzxAW7yKXHQUsJ5c1cJuogogBKtuQOxEDewzKXRDryxCTeLkFbnJAjoh7IA4BEPsXdnieAibGseUP1rLnDPiIWy00+pDGgWETnlDog1W4pYqte1rYE4GZr/5dj/JVEuV7RhVAEIc8Tt0XkOU9hB7AYnVr7IIhqGaG2OAEDQ//2J9hkyp5rekhFz1J7ZIqmLHMjCDLHjsEVkTILp4J+s63sxFX3wcOY3XU+7HPRtASHy4/fNXUropMn1ftcchIrYn1JSpEQQ01XZWekarWP1Hn/Bu0VYkK2qcYO+OOA8v9UX/dtHbcjX+tFo0R0KlE78QcJZ9ff/ziaaZSNdghAnXb22fapGc/8i2BK6Xcn/RTR2TG9vMa/BoNKkI5wUIon+dv3Kx8F01z7arKy/waXWBb2bysLKTVLk5tvBt2aHYy/9E36FRtGyXrWFLD6nRT8O9Ni6DKaZC+PW/0fq5tPL3Cc0SPm7e1t/vk4nMA+8KZ9bR/CVhlIwOWUkpqC8F3ZHjBfVY5KleedYs7S0I3LS4TV/UWrTIsrFx35EyvcHkfh7mmO8+azFkQBj51NcpWf/sTHMIxOP1anyllYVf8u+YUZPTFSIRFR89DunoOblbhK/+QQB+E4QeO+rtHWcAA9IpF6ch7Zyt6Us+zLcoXPUBkk9sKVQwPvyi4TIqqACpTbm9kP8CGr0gEmebAiRtI9ghNnK3Xtf04e7B0hfxq0oWyfJbYzt2mk9obGiKo4sl6heutwVSJiz15+ml7Jl9qhpEblyvdnjvNO/f5m33fR7ZDYT/MInhTV3oWhmmBIOLrBKsXTM5clP6WqTXLq7RUkXf50gLVC4WmZc3AlCPrMA0REtrSvarOI0qFVp9Aajg3S8S9a54/9FalEpLi3eBKepOmiIYtpHhWTjtj0PTL8EYf77TfaLJdUS/fX8k7w+oluarKls64vbzud8/H7nc3Q82nZSxCn2HGsxF8Sn0AC4aGXUjsZyA85biY0rEVLzzDVbkM9n+MSlOuLqZPhT94kiuY0jaXPAQGG4SeS9e9ZZfatNjGcX6KPzRcf1xY/s8oM8WdE0mbkLok/WnFtdx4J3CIGws3s7CxvxgolHtXMdq65meIxq7//Qic/xPvcJBnYb3a0s9Ugfpw2m/C+s2NxSJCGk5Caeyvv1OA7tgjanxImZj99M2CXECTi5j7dzkd1gn6lOgNS3n3jVmcdPcTOY5jA198+77gbZh1l9m4YHnpPLJ6HZPTKzsArDZYDkP/8yAtRjrtJxQ/iMDuqDAfgcHltgoCILILGURcAxIAo1h/FshDORNEa037glSzZNVZhbjC4TYW/EKTvTsJY2qq2/GozMUBZukijMWQYZpdmVHAoKLAner3r8/M7ZGa8pyWjpbXtg/xk+MxRudJXk/tn6QKzZV2tJCBTAtqHI11yau8aZf8J5B8Y1//HpI9KAOQ2WSGabYMe9cKWNvE4VDtGPJan3DHAAS/TABbz4G8H5fRfHCcMUtMVcl/L0sAbYTg25nrvs/dHDt7HArjFFmXBgnZld//D4gAAAAA==" alt="Justin Goes" width="80" height="80"><p>Excellent work. Most appreciated and well done in such a short timeframe.</p><footer><b>Justin Goes</b>CEO, Subway Europe</footer></blockquote>
       <blockquote><img src="data:image/webp;base64,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" alt="Honza Hanuš" width="80" height="80"><p>Success story and company turnaround. An exceptional asset for the company.</p><footer><b>Honza Hanuš</b>CEO, Yoplait CEE</footer></blockquote>
       <blockquote><img src="data:image/webp;base64,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" alt="Marek Chovanec" width="80" height="80"><p>Key architect of our communication system - we are now selling better than ever before.</p><footer><b>Marek Chovanec</b>Marketing Manager, VW Slovakia</footer></blockquote>
-    
-      <blockquote><span class="ini" aria-hidden="true">MK</span><p>He was the driving force behind portfolio scaling, new markets expansion, e-commerce profit-driven optimisation and lead generation boost.</p><footer><b>Martin Karner</b>Senior Marketing Manager, Ecoprodukt &amp; Edimo</footer></blockquote>
-      <blockquote><span class="ini" aria-hidden="true">MT</span><p>We are now nr. 2 brand in less than a year from start. Thanks to this success I was happy to entrust him with the launch of another new brand of cosmetics.</p><footer><b>Mat&#250;&#353; Teke&#318;</b>Private Labels Manager, Dr.Max</footer></blockquote>
-      <blockquote><span class="ini" aria-hidden="true">MK</span><p>Thanks to his leadership approach, we accelerated time-to-market.</p><footer><b>Martina Kov&#225;&#269;ov&#225;</b>Expansion Lead B2B &amp; B2C, DACH &amp; CEE, Edimo</footer></blockquote>
     </div>
     <p class="more">25 named references across 20 years, on request and on <a href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">LinkedIn</a>.</p>
   </div>
@@ -639,6 +647,7 @@
     </div>
   </div>
 </section>
+
 
 
 </main>
