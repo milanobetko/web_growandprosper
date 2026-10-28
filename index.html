@@ -359,6 +359,26 @@
   .ringmap p{margin-top:1rem;font-size:.86rem;color:var(--ink-soft);text-align:center}
   .service.on{border-color:var(--lime)}
   @media (max-width:860px){.svc-layout{grid-template-columns:1fr;gap:1.5rem}.ringmap{position:static;max-width:240px;margin-inline:auto}}
+
+  /* Edimo "what I built" as a list */
+  .case ul.built{list-style:none;margin:.3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem 1.6rem}
+  .case ul.built li{position:relative;padding-left:1.1rem;color:var(--ink-soft);line-height:1.4}
+  .case ul.built li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--lime)}
+  @media (max-width:720px){
+    .case ul.built{grid-template-columns:1fr}
+    /* numbers first on small screens */
+    .case>div:last-child{display:flex;flex-direction:column}
+    .case>div:last-child>.tags{order:1}
+    .case>div:last-child>.kpis{order:2;margin-top:.4rem;margin-bottom:1.2rem}
+    .case>div:last-child>.year2{order:3;margin-top:0;margin-bottom:1.6rem}
+    .case>div:last-child>dl{order:4}
+  }
+  /* shorter text blocks on phones */
+  @media (max-width:600px){
+    body{font-size:17px;line-height:1.5}
+    .why-text,.hero .sub,.case dd,.pains li,.service .for{font-size:1rem}
+    .lead{font-size:1.02rem}
+  }
 </style>
 </head>
 <body>
@@ -547,7 +567,7 @@
         <dl>
           <dt>The situation</dt><dd>Growing revenue, losing money. Five markets, no demand system, nobody owning pipeline.</dd>
           <dt>The strategy, then the build</dt><dd>New positioning and five-country go-to-market, B2C and B2B in parallel - then the e-commerce, lead-gen and media engine to execute it.</dd>
-          <dt>What I built, 80% in house</dt><dd>Digital ecosystem of 12 sales and social channels, 5 new EU markets (AT, CH, RO, DE, HU), B2C and B2B e-shop, B2B partner program, profit-based campaign optimisation, new brand and full platform relaunch, pricing and promotions, CRM, automation and AI.</dd>
+          <dt>What I built, 80% in house</dt><dd><ul class="built"><li>Digital ecosystem of 12 sales and social channels</li><li>5 new EU markets (AT, CH, RO, DE, HU)</li><li>B2C and B2B e-shop</li><li>B2B partner program</li><li>Profit-based campaign optimisation</li><li>New brand and full platform relaunch</li><li>Pricing and promotions</li><li>CRM</li><li>Automation and AI</li></ul></dd>
         </dl>
         <div class="kpis">
           <div><b>9x</b><span>profit</span></div>
@@ -584,8 +604,7 @@
     <h2>You're not hiring a marketer. You're hiring the strategist who has found and navigated this growth 200 times.</h2>
     <div class="why-text">
       <p>I've run marketing for Heineken, Yoplait, Subway, Tesco and VW. I ran strategy inside WPP for CEE, EMEA and global projects. Then I stopped advising and started owning the outcome - a strategy that took a green energy scale-up to 9x profit in twelve months.</p>
-      <p>Subway CEE across 13 markets. Yoplait CEE turned around, market share 21% to 29%. Alza's media strategy on the way to number one. VW Slovakia to #2 share in year two.</p>
-      <p>The point: I've seen which strategies survive contact with a real P&amp;L and which only look good in a deck. That is why this takes 14 days, not six months.</p>
+            <p>The point: I've seen which strategies survive contact with a real P&amp;L and which only look good in a deck. That is why this takes 14 days, not six months.</p>
       <p>Growth rarely fails for lack of channels. It fails because brand, media, sales and agencies don't work as one system. I have led fifteen teams and twenty agencies - my job is to make them play one plan, from one set of numbers.</p>
       <p class="punch">You're not paying for a document. You're paying for the decisions that don't need testing.</p>
     </div>
